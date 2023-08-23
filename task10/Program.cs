@@ -3,18 +3,19 @@
 782 -> 8
 918 -> 1
 */
-Console.WriteLine("введите трехзначное число");
+Console.WriteLine("введите трехзначное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-if (number < 100)
+while (number > 999)
 {
-    Console.WriteLine("это не трехзначное число, попробуйте еще раз");
-    return;
+    number = number / 10;
 }
-if (number >= 1000)
+int numberThree = number % 10;
+
+if (number > 100)
 {
-     Console.WriteLine("это не трехзначное число, попробуйте еще раз");
-    return;
+    Console.WriteLine(numberThree);
 }
-Console.WriteLine($"число {number}");
-int secondRank = number / 10 % 10;
-Console.WriteLine($"вторая цифра {secondRank}");
+else
+{
+    Console.WriteLine("третьей цифры нет");
+}
